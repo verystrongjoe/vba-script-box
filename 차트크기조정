@@ -1,0 +1,7 @@
+
+
+Sub 차트크기조정()
+    Selection.Height = 300
+    Selection.Width = 600
+End Sub
+

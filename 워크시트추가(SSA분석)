@@ -1,0 +1,67 @@
+
+Sub addNew()
+
+  
+ Dim clipboard As MSForms.DataObject
+Dim strContents As String
+
+Set clipboard = New MSForms.DataObject
+clipboard.GetFromClipboard
+strContents = clipboard.GetText
+
+
+
+Worksheets.Add
+
+ActiveSheet.Name = strContents
+
+    
+    
+     Selection.End(xlToLeft).Select
+    Selection.End(xlUp).Select
+    ActiveCell.FormulaR1C1 = "분석내용"
+    Rows("1:1").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .Color = 65535
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    Range("A15").Select
+    ActiveCell.FormulaR1C1 = "데이터1"
+    Rows("15:15").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .Color = 65535
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    ActiveWindow.SmallScroll Down:=33
+    Range("A50").Select
+    ActiveCell.FormulaR1C1 = "데이터2"
+    Rows("50:50").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .Color = 65535
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    ActiveWindow.SmallScroll Down:=33
+    Range("A85").Select
+    ActiveCell.FormulaR1C1 = "데이터3"
+    Rows("85:85").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .Color = 65535
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    
+    Range("A1").Select
+ 
+End Sub
+

@@ -1,0 +1,41 @@
+Sub 매크로1()
+'
+' 매크로1 매크로
+'
+
+Dim movieNames As Variant
+movieNames = Array( _
+            "화이: 괴물을 삼킨 아이", _
+            "엔더스 게임", _
+            "애프터 어스", _
+            "끝까지 간다", _
+            "스토커", _
+            "잭 라이언 : 코드네임 쉐도우", _
+            "말레피센트", _
+            "극장판 포켓몬스터 베스트위시: 신의 속도 게노세크트, 뮤츠의 각성", _
+            "프랑켄슈타인: 불멸의 영웅", _
+            "헨젤과 그레텔: 마녀 사냥꾼 3D", _
+            "잡스", _
+            "분노의 윤리학", _
+            "히든 카드", _
+            "가시", _
+            "러시 : 더 라이벌", _
+            "오큘러스", _
+           "배우는 배우다" _
+ )
+
+
+        Dim element As Variant
+
+For Each element In movieNames
+     
+    ActiveCell.FormulaR1C1 = element
+    Windows("박스오피스_130101_140616_최종2_전처리3.xlsx").Activate
+    ActiveSheet.Range("$A$1:$AF$2354").AutoFilter Field:=3, Criteria1:= _
+        element
+    Range("A1164").Select
+    Range(Selection, Selection.End(xlDown)).Select
+  
+Next element
+End Sub
+  

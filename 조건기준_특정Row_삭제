@@ -1,0 +1,136 @@
+http://ko.twtrland.com/
+->twitter 이용한 뭔가별도의서비스??
+
+
+영화진흥위원회
+http://www.kobis.or.kr/
+
+
+
+' 2번째 컬럼이 주간/주말 좌석점유율이라고 시작하거나, ""일 경우 삭제 
+Sub deleterow()
+
+Dim LastRow As Integer
+Dim a As Integer
+
+LastRow = ActiveSheet.UsedRange.Rows.Count
+MsgBox LastRow
+'OK the number of rows has been detected properly
+
+For a = 1 To LastRow Step 1
+'MsgBox ActiveSheet.Cells(a, 3)
+
+If ActiveSheet.Cells(a, 2) = "주간/주말 좌석점유율 검색 리스트" Then
+'looking for an empty cell
+Rows(a).Delete
+End If
+
+
+If ActiveSheet.Cells(a, 2) = "" Then
+'looking for an empty cell
+Rows(a).Delete
+End If
+
+Next
+
+End Sub
+
+
+
+Sub deleterow()
+
+Dim LastRow As Integer
+Dim a As Integer
+Dim week As String
+ 
+LastRow = ActiveSheet.UsedRange.Rows.Count
+MsgBox LastRow
+'OK the number of rows has been detected properly
+
+For a = 1 To LastRow Step 1
+'MsgBox ActiveSheet.Cells(a, 3)
+
+If ActiveSheet.Cells(a, 1) > 10 Then
+'looking for an empty cell
+
+week = Cells(a, 2)
+Rows(a).Delete
+Else
+    Cells(a, 1) = week
+        
+
+End If
+
+Next
+
+End Sub
+
+
+
+
+
+Sub deleterow()
+
+Dim LastRow As Integer
+Dim a As Integer
+
+LastRow = ActiveSheet.UsedRange.Rows.Count
+MsgBox LastRow
+'OK the number of rows has been detected properly
+
+For a = 2 To LastRow Step 1
+'MsgBox ActiveSheet.Cells(a, 3)
+
+If ActiveSheet.Cells(a, 2) = "합계" Then
+'looking for an empty cell
+Rows(a).Delete
+End If
+
+
+If ActiveSheet.Cells(a, 2) = "순위" Then
+'looking for an empty cell
+Rows(a).Delete
+End If
+
+
+
+Next
+
+End Sub
+
+
+
+주차 연산 하는 법 K2개봉일 J2 주차시작일
+=IF(MOD((J2-K2),7)=0,ROUNDUP((J2-K2)/7,0)+1,ROUNDUP((J2-K2)/7,0))
+
+
+
+
+Sub deleterow()
+
+Dim LastRow As Integer
+Dim a As Integer
+
+LastRow = ActiveSheet.UsedRange.Rows.Count
+MsgBox LastRow
+'OK the number of rows has been detected properly
+
+For a = 2 To LastRow Step 1
+'MsgBox ActiveSheet.Cells(a, 3)
+
+If ActiveSheet.Cells(a, 2) = "합계" Then
+'looking for an empty cell
+Rows(a).Delete
+End If
+
+
+If ActiveSheet.Cells(a, 2) = "순위" Then
+'looking for an empty cell
+Rows(a).Delete
+End If
+
+
+
+Next
+
+End Sub

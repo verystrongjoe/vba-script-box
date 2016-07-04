@@ -1,0 +1,15 @@
+Sub 클립보드출력()
+
+'FM20.dll 다운로드 경로 http://www.dlldump.com/download-dll-files_new.php/dllfiles/F/FM20.DLL/11.0.5601/download.html 다운로드받아 system32에 넣자.
+    
+ Dim clipboard As MSForms.DataObject
+Dim strContents As String
+
+Set clipboard = New MSForms.DataObject
+clipboard.GetFromClipboard
+strContents = clipboard.GetText
+
+MsgBox strContents
+
+
+End Sub
